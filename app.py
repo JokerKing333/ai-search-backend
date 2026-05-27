@@ -147,10 +147,11 @@ def get_models():
 
 
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
     print("=" * 50)
     print("  AI问答系统启动中...")
     print(f"  服务提供商: {AI_PROVIDER}")
     print(f"  使用模型: {MODEL}")
-    print(f"  访问地址: http://localhost:5000")
+    print(f"  访问地址: http://localhost:{port}")
     print("=" * 50)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=port)
